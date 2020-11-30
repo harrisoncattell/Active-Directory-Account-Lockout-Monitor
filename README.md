@@ -42,13 +42,11 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is a lightweight PowerShell script that collects security events with the ID 4740 (which referes to account lockouts) and refernces them with a array of users that has been specified.
-This information is emailed to a set of recipients with key information from the event.
+This is a lightweight PowerShell script that collects security events with the ID 4740 (which referes to account lockouts) and references them against an array of users that has been specified.
+This information is emailed to a set of recipients with key information from the event
 
 
 ### Built With
@@ -63,7 +61,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This script requires the Active Directory PowerShell Module to be installed. Instructions can be found [Here](https://4sysops.com/wiki/how-to-install-the-powershell-active-directory-module/)
+This script requires the Active Directory PowerShell Module to be installed. Instructions can be found [here](https://4sysops.com/wiki/how-to-install-the-powershell-active-directory-module/)
 
 ### Installation
 
@@ -76,24 +74,16 @@ This script requires the Active Directory PowerShell Module to be installed. Ins
 3. Locate and change the following 
     ```$VerbosePath```
     ```$OUPath```
+    ```$recipients = @("TEST <TEST@testemail.com>")```
+    ```$Sender = @("TEST <TEST@testemail.com>")```
 
-
+4. Create the Task Scheduler task for this script, the interval can be set to how ever long you want (Please make the variable ```$TimeSpan``` match)
+If you don't know how to do this, please follow this [guide](https://blog.netwrix.com/2018/07/03/how-to-automate-powershell-scripts-with-task-scheduler/)
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/harrisoncattell/Active-Directory-Account-Lockout-Monitor/issues) for a list of proposed features (and known issues).
-
-
+This project can be used in local AD security monitoring. This was created in reponse to the need of transparency around what administrator accounts were getting locked out and from where without relying on delayed notification from a SIEM supplier
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -106,15 +96,6 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-
-
 <!-- CONTACT -->
 ## Contact
 
@@ -123,16 +104,6 @@ Your Name - Harrison Cattell
 Linkedin = https://www.linkedin.com/in/harrisoncattell/
 
 Project Link: [https://github.com/harrisoncattell/Active-Directory-Account-Lockout-Monitor](https://github.com/harrisoncattell/Active-Directory-Account-Lockout-Monitor)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
-
 
 
 

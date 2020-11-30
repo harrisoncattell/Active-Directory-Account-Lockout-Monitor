@@ -2,7 +2,7 @@
 ## --------- VERBOSE SETTINGS --------- ##
 # Change to define verbose level; 0 is off, 1 is logging all accounts, 2 is logging admin accounts
 $Verbose = 1
-$VerbosePath = ## ENTER A PATH
+$VerbosePath = ## ENTER A PATH FOR THE LOGGING
 ## ------------------------------------ ##
 
 ## --------- FUNCTIONS --------- ##
@@ -34,16 +34,16 @@ function EnableVerbose
 ## --------------------------- ##
 ## Process 0: Get triggered event and AD Admin accounts
 # Specify timespan for events
-$TimeSpan = -5.5 # timespan in minutes (MUST BE NEGATIVE)
+$TimeSpan = -5 # timespan in minutes (MUST BE NEGATIVE)
 $TimeFilter = (get-date).AddMinutes($TimeSpan)
 
 # Get latest security ID 4740 events
 $SecurityEvents = Get-WinEvent -FilterHashtable @{LogName='ForwardedEvents';ID='4740'} -MaxEvents 50 # In this instance, I am running this on a server with forwarded events
 $LatestSecurityEvents = $SecurityEvents | Where-Object {$_.TimeCreated -gt $TimeFilter}
-
+ 
 # Get members of Admins OU
-$OUPath = ## SELECT OU PATH
- $AdAdminAccounts = Get-ADUser -Filter * -SearchBase $OUPath | Select-Object SamAccountName
+$OUPath = ## SELECT OU PATH THAT CONTAINS THE USERS TO MONITOR
+$AdAdminAccounts = Get-ADUser -Filter * -SearchBase $OUPath | Select-Object SamAccountName
 ## --------------------------- ##
 
 ## --------------------------- ##
