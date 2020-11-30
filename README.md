@@ -77,6 +77,8 @@ This script requires the Active Directory PowerShell Module to be installed. Ins
     ```$recipients = @("TEST <TEST@testemail.com>")```
     ```$Sender = @("TEST <TEST@testemail.com>")```
 
+You may also want to change how the events are collected, this can be found in the line ```$SecurityEvents = Get-WinEvent -FilterHashtable @{LogName='ForwardedEvents';ID='4740'} -MaxEvents 50```
+
 4. Create the Task Scheduler task for this script, the interval can be set to how ever long you want (Please make the variable ```$TimeSpan``` match)
 If you don't know how to do this, please follow this [guide](https://blog.netwrix.com/2018/07/03/how-to-automate-powershell-scripts-with-task-scheduler/)
 
@@ -99,9 +101,9 @@ Contributions are what make the open source community such an amazing place to b
 <!-- CONTACT -->
 ## Contact
 
-Your Name - Harrison Cattell
+Name: Harrison Cattell
 
-Linkedin = https://www.linkedin.com/in/harrisoncattell/
+Linkedin: https://www.linkedin.com/in/harrisoncattell/
 
 Project Link: [https://github.com/harrisoncattell/Active-Directory-Account-Lockout-Monitor](https://github.com/harrisoncattell/Active-Directory-Account-Lockout-Monitor)
 
