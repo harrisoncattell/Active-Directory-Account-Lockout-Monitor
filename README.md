@@ -47,20 +47,14 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`harrisoncattell`, `Active-Directory-Account-Lockout-Monitor`, `twitter_handle`, `email`, `Active Directory Account Lockout Notifier`, `This is a simple powershell script that can notify users of AD account lockouts from users within a certain OU and notify via Email with information such as calling computer and time generated`
+This is a lightweight PowerShell script that collects security events with the ID 4740 (which referes to account lockouts) and refernces them with a array of users that has been specified.
+This information is emailed to a set of recipients with key information from the event.
 
 
 ### Built With
 
-* []()
-* []()
-* []()
-
-
+* Powershell  (A recent version will be ok, 4 or higher)
+* Active Directory Powershell Module
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -69,22 +63,19 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+This script requires the Active Directory PowerShell Module to be installed. Instructions can be found [Here](https://4sysops.com/wiki/how-to-install-the-powershell-active-directory-module/)
 
 ### Installation
 
-1. Clone the repo
+1. Clone the repo (or download)
    ```sh
    git clone https://github.com/harrisoncattell/Active-Directory-Account-Lockout-Monitor.git
    ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
+2. Please move script file to suitable location
+
+3. Locate and change the following 
+    ```$VerbosePath```
+    ```$OUPath```
 
 
 
